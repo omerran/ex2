@@ -6,6 +6,8 @@
 #define EX2_GAME_H
 #include "Card.h"
 #include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
 
 /*
  * GameStatus:
