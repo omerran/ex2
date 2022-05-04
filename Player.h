@@ -19,6 +19,9 @@ class Player {
 public:
 
     Player(char* name, int maxHP = 100, int force = 5);
+    Player(const Player&) = default;
+    ~Player() = default;
+    Player& operator=(const Player& other) = default;
 
     void levelUp();
     int getLevel();
