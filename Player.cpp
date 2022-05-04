@@ -102,5 +102,4 @@ Player::printPlayerInfo(const char* name, int level, int force, int hp, int coin
     std::cout << "HP: " << m_HP << "\n";
     std::cout << "Coins: " << m_coins << "\n";
     std::cout << "------------------------";
-
 }
