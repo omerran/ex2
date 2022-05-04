@@ -24,7 +24,6 @@ Mtmchkin::isOver(){
         return true;
     }
     return false;
-
 }
 
 Mtmchkin::getGameStatus() const{
