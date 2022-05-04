@@ -1,9 +1,6 @@
 //
 // Created by itayk on 04/05/2022.
 //
-
-#include Mtmchkin.h
-
 #include "Mtmchkin.h"
 
 Mtmchkin(const char* playerName, const Card* cardsArray, int numOfCards) {

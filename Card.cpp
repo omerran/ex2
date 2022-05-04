@@ -3,6 +3,7 @@
 //
 #include "Card.h"
 #include "Player.h"
+#include <iostream>
 //
 Card::Card(CardType type, const CardStats& stats){
     this->m_effect=type;
