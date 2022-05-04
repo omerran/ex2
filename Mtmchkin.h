@@ -60,6 +60,7 @@ public:
     //TODO: complete the Mtmchkin class.
 
 private:
+    static int
     //TODO: complete the Mtmchkin class.
 
 };
