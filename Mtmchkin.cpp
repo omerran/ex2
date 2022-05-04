@@ -6,8 +6,8 @@
 
 #include "Mtmchkin.h"
 
-Mtmchkin(const char* playerName, const Card* cardsArray, int numOfCards) {
-    this->m_gameStatus = midGame;
+Mtmchkin::Mtmchkin(const char* playerName, const Card* cardsArray, int numOfCards) {
+    this->m_gameStatus = MidGame;
     this->m_cardNumber = numOfCards;
     this->m_cardsArray = calloc(numOfCards, sizeof(card));
     for (int i = 0; i < numOfCards; ++i) {
@@ -17,16 +17,25 @@ Mtmchkin(const char* playerName, const Card* cardsArray, int numOfCards) {
     strcpy(m_playerName, playerName);
 }
 
-bool isOver(){
+Mtmchkin::isOver(){
+    if (m_level == 10){
+        GameStatus = Win;
+        return true;
+    }
+    if(m_HP = 0){
+        GameStatus = Loss;
+        return true;
+    }
+    return false;
 
 }
 
-GameStatus getGameStatus() const{
+Mtmchkin::getGameStatus() const{
     return m_gameStatus;
 }
 
 
-void playNextCard(){
+Mtmchkin::playNextCard(){
     Card currentCard = m_cardsArray[cardsIndex];
     currentCard.printInfo();
     currentCard.applyEncounter(this*);

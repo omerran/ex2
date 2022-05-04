@@ -46,7 +46,7 @@ public:
      *          True if the game ended
      *          False otherwise
      */
-    bool isOver();
+    friend bool isOver();
 
 
     /*
@@ -64,7 +64,7 @@ private:
     char* m_playerName;
     Card* m_cardsArray;
     int m_cardsNumber;
-    GameStatus m_gameStatus;
+    static GameStatus m_gameStatus;
 
 
     //TODO: complete the Mtmchkin class.
