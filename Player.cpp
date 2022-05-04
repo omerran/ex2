@@ -94,7 +94,7 @@ Player::getAttackStrength(){
     return m_level + m_force;
 }
 
-Player::printPlayerInfo(const char* name, int level, int force, int hp, int coins){
+Player::printInfo(){
     std::cout << "Player Details : " << "\n";
     std::cout << "Name: " << m_name << "\n";
     std::cout << "Level: " << m_level << "\n";

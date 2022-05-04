@@ -33,7 +33,7 @@ public:
     bool pay(int coins);
     int getAttackStrength();
 
-    void printPlayerInfo(const char* name, int level, int force, int hp, int coins);
+    void printInfo();
 
 }
 
