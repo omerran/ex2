@@ -60,7 +60,11 @@ public:
     //TODO: complete the Mtmchkin class.
 
 private:
-    static int
+    static int cardsIndex;
+    char* playerName;
+    Card* cardsArray;
+    int cardNumber;
+
     //TODO: complete the Mtmchkin class.
 
 };
