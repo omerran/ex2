@@ -20,7 +20,7 @@ Player::Player(char* name, int maxHP = 100, int force = 5){
     m_coins = 0;
 }
 
-Player::levelUP(){
+Player::levelUp(){
     if (m_level >= 10){
         return
     }

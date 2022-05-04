@@ -20,7 +20,7 @@ public:
 
     Player(char* name, int maxHP = 100, int force = 5);
 
-    void levelUP();
+    void levelUp();
     int getLevel();
     void buff(int force);
     void heal(int HP);
