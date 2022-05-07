@@ -54,21 +54,21 @@ void Card::applyEncounter(Player& player) const{
 
 void Card::printInfo() const{
     if(this->m_effect==CardType::Battle){
-        printBattleCardInfo(this);
+        printBattleCardInfo(this->m_stats);
         return;
     }
     else{
         if(this->m_effect==CardType::Buff){
-            printBuffCardInfo(this);
+            printBuffCardInfo(this->m_stats);
             return;
         }
         else{
             if(this->m_effect==CardType::Heal){
-                printHealCardInfo(this);
+                printHealCardInfo(this->m_stats);
                 return;
             }
             else{
-                printTreasureCardInfo(this);
+                printTreasureCardInfo(this->m_stats);
                 return;
             }
         }
