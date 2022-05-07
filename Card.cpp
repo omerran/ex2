@@ -17,7 +17,7 @@ void Card::applyEncounter(Player& player) const{
 
     //case Battle card
     if(this->m_effect==CardType::Battle){
-        if(getAttackStrength(player)<currentStats.force){
+        if(player.getAttackStrength()<currentStats.force){
             std::cout << "Ouch the player loses";
             player.damage(currentStats.hpLossOnDefeat);
         }
