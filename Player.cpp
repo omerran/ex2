@@ -3,6 +3,7 @@
 //
 #include "Player.h"
 
+
 Player::Player(char* name, int maxHP = 100, int force = 5){
 
     if(maxHP < 0){
@@ -12,12 +13,12 @@ Player::Player(char* name, int maxHP = 100, int force = 5){
         force = 5;
     }
 
-    m_name = name;
-    m_level = 1;
-    m_force = force;
-    m_maxHP = maxHP;
-    HP =  maxHP;
-    m_coins = 0;
+    this->m_name = name;
+    this->m_level = 1;
+    this->m_force = force;
+    this->m_maxHP = maxHP;
+    this->m_HP =  maxHP;
+    this->m_coins = 0;
 }
 
 Player::levelUp(){
