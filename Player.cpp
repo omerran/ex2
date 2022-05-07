@@ -2,7 +2,7 @@
 // Created by itayk on 04/05/2022.
 //
 #include "Player.h"
-
+#include <iostream>
 
 Player::Player(char* name, int maxHP = 100, int force = 5){
 
@@ -21,18 +21,18 @@ Player::Player(char* name, int maxHP = 100, int force = 5){
     this->m_coins = 0;
 }
 
-Player::levelUp(){
+void Player::levelUp(){
     if (m_level >= 10){
-        return
+        return;
     }
     m_level += 1;
 }
 
-Player::getLevel(){
+int Player::getLevel(){
     return m_level;
 }
 
-Player::buff(int force){
+void Player::buff(int force){
     if(force < 0){
         force = 0;
     }
@@ -40,7 +40,7 @@ Player::buff(int force){
     m_force += force;
 }
 
-Player::heal(int HP){
+void Player::heal(int HP){
     if(HP < 0){
         HP = 0;
     }
@@ -51,7 +51,7 @@ Player::heal(int HP){
     m_HP += HP;
 }
 
-Player::damage(int HP){
+void Player::damage(int HP){
     if(HP < 0){
         HP = 0;
     }
@@ -63,14 +63,14 @@ Player::damage(int HP){
     m_HP -= HP;
 }
 
-Player::isKnockedOut(){
+bool Player::isKnockedOut(){
     if(m_HP == 0) {
         return true;
     }
     return false;
 }
 
-Player::addCoins(int coins){
+void Player::addCoins(int coins){
     if(coins < 0){
         coins = 0;
     }
@@ -79,7 +79,7 @@ Player::addCoins(int coins){
 }
 
 // אם זה שלילי יש דפקה (כי מוציא TRUE) - לא ברור למה התכוונו
-Player::pay(int coins){
+bool Player::pay(int coins){
     if(coins < 0){
         coins = 0;
     }
@@ -91,11 +91,11 @@ Player::pay(int coins){
     return true;
 }
 
-Player::getAttackStrength(){
+int Player::getAttackStrength(){
     return m_level + m_force;
 }
 
-Player::printInfo(){
+void Player::printInfo(){
     std::cout << "Player Details : " << "\n";
     std::cout << "Name: " << m_name << "\n";
     std::cout << "Level: " << m_level << "\n";

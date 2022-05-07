@@ -6,7 +6,6 @@
 #define EX2_PLAYER_H
 
 #include <stdbool.h>
-#include <std::cout>
 
 class Player {
 
