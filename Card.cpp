@@ -25,7 +25,7 @@ void Card::applyEncounter(Player& player) const{
             player.damage(currentStats.hpLossOnDefeat);
         }
         else{
-            std::cout << "The player defeated the monster and won the loot! Hooray !" << endl;
+            std::cout << "The player defeated the monster and won the loot! Hooray!" << endl;
             std::cout << "------------------------\n";
             player.addCoins(currentStats.loot);
             player.levelUp();
