@@ -16,11 +16,11 @@ Mtmchkin(const char* playerName, const Card* cardsArray, int numOfCards) {
 
 bool isOver(){
     Mtmchkin::isOver(){
-        if (m_level == 10){
+        if (this->m_level == 10){
             GameStatus = Win;
             return true;
         }
-        if(m_HP = 0){
+        if(this->m_HP = 0){
             GameStatus = Loss;
             return true;
         }
@@ -29,19 +29,19 @@ bool isOver(){
 }
 
 GameStatus getGameStatus() const{
-    return m_gameStatus;
+    return this->m_gameStatus;
 }
 
 
 void playNextCard(){
-    Card currentCard = m_cardsArray[cardsIndex];
+    Card currentCard = this->m_cardsArray[this->cardsIndex];
     currentCard.printInfo();
     currentCard.applyEncounter(this*);
     Player.printInfo();
-    if (m_cardsIndex < m_cardsNumber-1){
-        m_cardsIndex++;
+    if (this->m_cardsIndex < this->m_cardsNumber-1){
+        this->m_cardsIndex++;
     }
     else{
-        m_cardsIndex = 0;
+        this->m_cardsIndex = 0;
     }
 }

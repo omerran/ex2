@@ -59,7 +59,6 @@ public:
      */
     GameStatus getGameStatus() const;
 
-    //TODO: complete the Mtmchkin class.
 
 private:
     static int m_cardsIndex;
@@ -67,10 +66,6 @@ private:
     Card* m_cardsArray;
     int m_cardsNumber;
     static GameStatus m_gameStatus;
-
-
-    //TODO: complete the Mtmchkin class.
-
 };
 
 
