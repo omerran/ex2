@@ -21,10 +21,12 @@ void Card::applyEncounter(Player& player) const{
     if(this->m_effect==CardType::Battle){
         if(player.getAttackStrength()<currentStats.force){
             std::cout << "Ouch the player loses" << endl;
+            std::cout << "------------------------\n";
             player.damage(currentStats.hpLossOnDefeat);
         }
         else{
             std::cout << "The player defeated the monster and won the loot! Hooray !" << endl;
+            std::cout << "------------------------\n";
             player.addCoins(currentStats.loot);
             player.levelUp();
         }
@@ -42,7 +44,7 @@ void Card::applyEncounter(Player& player) const{
     //case Buff card
     if(this->m_effect==CardType::Buff){
         if(player.pay(currentStats.cost)){
-            player.heal(currentStats.buff);
+            player.buff(currentStats.buff);
         }
         return;
     }

@@ -107,5 +107,5 @@ void Player::printInfo(){
     std::cout << "Force: " << m_force << "\n";
     std::cout << "HP: " << m_HP << "\n";
     std::cout << "Coins: " << m_coins << "\n";
-    std::cout << "------------------------";
+    std::cout << "------------------------\n";
 }
