@@ -2,7 +2,7 @@
 // Created by itayk on 04/05/2022.
 //
 #include "Player.h"
-
+#include <iostream>
 
 Player::Player(char* name, int maxHP = 100, int force = 5){
 
@@ -23,7 +23,7 @@ Player::Player(char* name, int maxHP = 100, int force = 5){
 
 Player::levelUp(){
     if (m_level >= 10){
-        return
+        return;
     }
     m_level += 1;
 }

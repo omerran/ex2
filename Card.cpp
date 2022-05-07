@@ -4,6 +4,7 @@
 #include "Card.h"
 #include "Player.h"
 #include <iostream>
+#include "utilities.h"
 //
 Card::Card(CardType type, const CardStats& stats){
     this->m_effect=type;
@@ -74,8 +75,4 @@ void Card::printInfo() const{
     }
 }
 
-Card(): m_effect(CardType::Treasure), m_stats() {
-
-
-}
 
