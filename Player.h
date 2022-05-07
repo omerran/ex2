@@ -4,7 +4,8 @@
 
 #ifndef EX2_PLAYER_H
 #define EX2_PLAYER_H
-
+#define DEFAULT_MAX_HP 100
+#define DEFAULT_FORCE 5
 
 class Player {
 
@@ -17,7 +18,7 @@ class Player {
 
 public:
 
-    Player(char* name, int maxHP = 100, int force = 5);
+    Player(char* name, int maxHP = DEFAULT_MAX_HP, int force = DEFAULT_FORCE);
     Player(const Player&) = default;
     ~Player() = default;
     Player& operator=(const Player& other) = default;
@@ -34,6 +35,6 @@ public:
 
     void printInfo();
 
-}
+};
 
 #endif //EX2_PLAYER_H
