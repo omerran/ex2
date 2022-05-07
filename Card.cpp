@@ -5,6 +5,8 @@
 #include "Player.h"
 #include <iostream>
 #include "utilities.h"
+using std::cout;
+using std::endl;
 //
 Card::Card(CardType type, const CardStats& stats){
     this->m_effect=type;
@@ -18,11 +20,11 @@ void Card::applyEncounter(Player& player) const{
     //case Battle card
     if(this->m_effect==CardType::Battle){
         if(player.getAttackStrength()<currentStats.force){
-            std::cout << "Ouch the player loses";
+            std::cout << "Ouch the player loses" << endl;
             player.damage(currentStats.hpLossOnDefeat);
         }
         else{
-            std::cout << "The player defeated the monster and won the loot! Hooray !";
+            std::cout << "The player defeated the monster and won the loot! Hooray !" << endl;
             player.addCoins(currentStats.loot);
             player.levelUp();
         }
