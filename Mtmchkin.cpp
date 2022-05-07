@@ -7,6 +7,7 @@
 Mtmchkin::Mtmchkin(const char *playerName, const Card *cardsArray, int numOfCards): m_ourPlayer(playerName) {
     this->m_gameStatus =  GameStatus::MidGame;
     this->m_cardsNumber = numOfCards;
+    this->m_cardsIndex = 0;
     this->m_cardsArray = new Card[numOfCards]();
     for (int i = 0; i < numOfCards; ++i) {
         this->m_cardsArray[i] = cardsArray[i];
