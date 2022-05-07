@@ -20,57 +20,22 @@ enum class GameStatus{Win, Loss, MidGame};
 class Mtmchkin {
 public:
 
-    /*
-     * C'tor of the game:
-     *
-     * @param playerName - The name of the player.
-     * @param cardsArray - A ptr to the cards deck.
-     * @param numOfCards - Num of cards in the deck.
-     * @result
-     *      An instance of Mtmchkin
-    */
     Mtmchkin(const char* playerName, const Card* cardsArray, int numOfCards);
 
-
-    /*
-     * Play the next Card - according to the instruction in the exercise document
-     *
-     * @return
-     *      void
-    */
     void playNextCard();
 
+    bool isOver();
 
-    /*
-     *  Check if the game ended:
-     *
-     *  @return
-     *          True if the game ended
-     *          False otherwise
-     */
-    friend bool isOver();
-
-
-    /*
-     *  Get the status of the game:
-     *
-     *  @return
-     *          GameStatus - the current status of the running game
-     */
     GameStatus getGameStatus() const;
 
-    //TODO: complete the Mtmchkin class.
 
 private:
     static int m_cardsIndex;
-    char* m_playerName;
+    const char* m_playerName;
     Card* m_cardsArray;
     int m_cardsNumber;
     static GameStatus m_gameStatus;
-
-
-    //TODO: complete the Mtmchkin class.
-
+    Player m_ourPlayer;
 };
 
 
