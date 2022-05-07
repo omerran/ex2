@@ -30,11 +30,10 @@ public:
 
 
 private:
-    static int m_cardsIndex;
-    const char* m_playerName;
+    int m_cardsIndex;
     Card* m_cardsArray;
     int m_cardsNumber;
-    static GameStatus m_gameStatus;
+    GameStatus m_gameStatus;
     Player m_ourPlayer;
 };
 

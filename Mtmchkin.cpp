@@ -4,15 +4,13 @@
 #include "Mtmchkin.h"
 #include <string>
 
-Mtmchkin::Mtmchkin(const char *playerName, const Card *cardsArray, int numOfCards) {
+Mtmchkin::Mtmchkin(const char *playerName, const Card *cardsArray, int numOfCards): m_ourPlayer(playerName) {
     this->m_gameStatus =  GameStatus::MidGame;
     this->m_cardsNumber = numOfCards;
-    this->m_cardsArray = calloc(numOfCards, sizeof(Card));
+    this->m_cardsArray = new Card[numOfCards]();
     for (int i = 0; i < numOfCards; ++i) {
-        m_cardsArray[i] = cardsArray[i];
+        this->m_cardsArray[i] = cardsArray[i];
     }
-    this->m_playerName = playerName;
-    m_ourPlayer = Player(m_playerName);
 }
 
 bool Mtmchkin::isOver(){
@@ -21,7 +19,7 @@ bool Mtmchkin::isOver(){
             this->m_gameStatus =  GameStatus::Win;
             return true;
         }
-        if(ourPlayer->m_HP == 0){
+        if(ourPlayer.isKnockedOut()){
             this->m_gameStatus =  GameStatus::Loss;
             return true;
         }
