@@ -3,7 +3,8 @@
 //
 #include "Player.h"
 #include <iostream>
-
+#include <string>
+#include "utilities.h"
 
 
 Player::Player(const char* name, int maxHP, int force){
@@ -32,7 +33,7 @@ void Player::levelUp(){
     m_level += 1;
 }
 
-int Player::getLevel(){
+int Player::getLevel() const{
     return m_level;
 }
 
@@ -68,7 +69,7 @@ int Player::damage(int HP){
     return m_HP;
 }
 
-bool Player::isKnockedOut(){
+bool Player::isKnockedOut() const{
     if(m_HP == 0) {
         return true;
     }
@@ -96,16 +97,10 @@ bool Player::pay(int coins){
     return true;
 }
 
-int Player::getAttackStrength(){
+int Player::getAttackStrength() const{
     return m_level + m_force;
 }
 
-void Player::printInfo(){
-    std::cout << "Player Details: " << "\n";
-    std::cout << "Name: " << m_name << "\n";
-    std::cout << "Level: " << m_level << "\n";
-    std::cout << "Force: " << m_force << "\n";
-    std::cout << "HP: " << m_HP << "\n";
-    std::cout << "Coins: " << m_coins << "\n";
-    std::cout << "------------------------\n";
+void Player::printInfo() const{
+    printPlayerInfo(this->m_name,this->m_level,this->m_force,this->m_HP,this->m_coins);
 }

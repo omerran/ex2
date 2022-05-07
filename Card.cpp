@@ -5,8 +5,6 @@
 #include "Player.h"
 #include <iostream>
 #include "utilities.h"
-using std::cout;
-using std::endl;
 //
 Card::Card(CardType type, const CardStats& stats){
     this->m_effect=type;
@@ -14,20 +12,15 @@ Card::Card(CardType type, const CardStats& stats){
 }
 
 void Card::applyEncounter(Player& player) const{
-
-    CardStats currentStats=this->m_stats;
-
     //case Battle card
     if(this->m_effect==CardType::Battle){
-        if(player.getAttackStrength()<currentStats.force){
-            std::cout << "Ouch the player loses" << endl;
-            std::cout << "------------------------\n";
-            player.damage(currentStats.hpLossOnDefeat);
+        if(player.getAttackStrength()<this->m_stats.force){
+            printBattleResult(false);
+            player.damage(this->m_stats.hpLossOnDefeat);
         }
         else{
-            std::cout << "The player defeated the monster and won the loot! Hooray!" << endl;
-            std::cout << "------------------------\n";
-            player.addCoins(currentStats.loot);
+            printBattleResult(true);
+            player.addCoins(this->m_stats.loot);
             player.levelUp();
         }
         return;
@@ -35,23 +28,23 @@ void Card::applyEncounter(Player& player) const{
 
     //case Heal card
     if(this->m_effect==CardType::Heal){
-        if(player.pay(currentStats.cost)){
-            player.heal(currentStats.heal);
+        if(player.pay(this->m_stats.cost)){
+            player.heal(this->m_stats.heal);
         }
         return;
     }
 
     //case Buff card
     if(this->m_effect==CardType::Buff){
-        if(player.pay(currentStats.cost)){
-            player.buff(currentStats.buff);
+        if(player.pay(this->m_stats.cost)){
+            player.buff(this->m_stats.buff);
         }
         return;
     }
 
     //case Treasure card
     if(this->m_effect==CardType::Treasure){
-        player.addCoins(currentStats.loot);
+        player.addCoins(this->m_stats.loot);
     }
 }
 

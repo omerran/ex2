@@ -31,7 +31,7 @@ public:
 
 private:
     int m_cardsIndex;
-    Card* m_cardsArray;
+    const Card* m_cardsArray;
     int m_cardsNumber;
     GameStatus m_gameStatus;
     Player m_ourPlayer;

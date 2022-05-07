@@ -24,16 +24,16 @@ public:
     Player& operator=(const Player& other) = default;
 
     void levelUp();
-    int getLevel();
+    int getLevel() const;
     void buff(int force);
     void heal(int HP);
     int damage(int HP);
-    bool isKnockedOut();
+    bool isKnockedOut() const;
     void addCoins(int coins);
     bool pay(int coins);
-    int getAttackStrength();
+    int getAttackStrength() const;
 
-    void printInfo();
+    void printInfo() const;
 
 };
 
