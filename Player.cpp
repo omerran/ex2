@@ -6,7 +6,7 @@
 
 
 
-Player::Player(char* name, int maxHP, int force){
+Player::Player(const char* name, int maxHP, int force){
 
     this->m_name = name;
     this->m_level = 1;

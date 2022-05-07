@@ -21,7 +21,7 @@ bool Mtmchkin::isOver(){
             this->m_gameStatus =  GameStatus::Win;
             return true;
         }
-        if(this->m_HP == 0){
+        if(ourPlayer->m_HP == 0){
             this->m_gameStatus =  GameStatus::Loss;
             return true;
         }
