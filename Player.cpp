@@ -4,14 +4,8 @@
 #include "Player.h"
 #include <iostream>
 
-Player::Player(char* name, int maxHP = 100, int force = 5){
 
-    if(maxHP < 0){
-        maxHP = 100;
-    }
-    if(force < 0){
-        force = 5;
-    }
+Player::Player(char* name, int maxHP, int force){
 
     this->m_name = name;
     this->m_level = 1;
@@ -19,6 +13,15 @@ Player::Player(char* name, int maxHP = 100, int force = 5){
     this->m_maxHP = maxHP;
     this->m_HP =  maxHP;
     this->m_coins = 0;
+
+    if(maxHP < 0){
+        this->m_maxHP =  DEFAULT_MAX_HP;
+    }
+    if(force < 0){
+        this->m_force = DEFAULT_FORCE;
+    }
+
+
 }
 
 void Player::levelUp(){
