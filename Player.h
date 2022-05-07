@@ -27,7 +27,7 @@ public:
     int getLevel();
     void buff(int force);
     void heal(int HP);
-    void damage(int HP);
+    int damage(int HP);
     bool isKnockedOut();
     void addCoins(int coins);
     bool pay(int coins);

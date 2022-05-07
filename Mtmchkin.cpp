@@ -2,42 +2,43 @@
 // Created by itayk on 04/05/2022.
 //
 #include "Mtmchkin.h"
+#include <string>
 
-Mtmchkin(const char* playerName, const Card* cardsArray, int numOfCards) {
-    this->m_gameStatus = midGame;
-    this->m_cardNumber = numOfCards;
-    this->m_cardsArray = calloc(numOfCards, sizeof(card));
+Mtmchkin::Mtmchkin(const char *playerName, const Card *cardsArray, int numOfCards) {
+    this->m_gameStatus =  GameStatus::MidGame;
+    this->m_cardsNumber = numOfCards;
+    this->m_cardsArray = calloc(numOfCards, sizeof(Card));
     for (int i = 0; i < numOfCards; ++i) {
         m_cardsArray[i] = cardsArray[i];
     }
-    this->m_playerName = calloc(strlen(playerName) + 1, sizeof(char));
-    strcpy(m_playerName, playerName);
+    this->m_playerName = playerName;
+    m_ourPlayer = Player(m_playerName);
 }
 
-bool isOver(){
-    Mtmchkin::isOver(){
-        if (this->m_level == 10){
-            GameStatus = Win;
+bool Mtmchkin::isOver(){
+    Player ourPlayer= m_ourPlayer;
+        if (ourPlayer.getLevel() == 10){
+            this->m_gameStatus =  GameStatus::Win;
             return true;
         }
-        if(this->m_HP = 0){
-            GameStatus = Loss;
+        if(this->m_HP == 0){
+            this->m_gameStatus =  GameStatus::Loss;
             return true;
         }
         return false;
-    }
 }
 
-GameStatus getGameStatus() const{
+
+GameStatus Mtmchkin::getGameStatus() const{
     return this->m_gameStatus;
 }
 
 
-void playNextCard(){
-    Card currentCard = this->m_cardsArray[this->cardsIndex];
+void Mtmchkin::playNextCard(){
+    Card currentCard = this->m_cardsArray[this->m_cardsIndex];
     currentCard.printInfo();
-    currentCard.applyEncounter(this*);
-    Player.printInfo();
+    currentCard.applyEncounter(this->m_ourPlayer);
+    m_ourPlayer.printInfo();
     if (this->m_cardsIndex < this->m_cardsNumber-1){
         this->m_cardsIndex++;
     }

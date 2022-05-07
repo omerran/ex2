@@ -5,6 +5,7 @@
 #include <iostream>
 
 
+
 Player::Player(char* name, int maxHP, int force){
 
     this->m_name = name;
@@ -54,16 +55,17 @@ void Player::heal(int HP){
     m_HP += HP;
 }
 
-void Player::damage(int HP){
+int Player::damage(int HP){
     if(HP < 0){
         HP = 0;
     }
 
     if(m_HP - HP <= 0) {
         m_HP = 0;
-        return;
+        return m_HP;
     }
     m_HP -= HP;
+    return m_HP;
 }
 
 bool Player::isKnockedOut(){
