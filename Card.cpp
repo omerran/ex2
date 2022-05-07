@@ -51,7 +51,6 @@ void Card::applyEncounter(Player& player) const{
     if(this->m_effect==CardType::Treasure){
         player.addCoins(currentStats.loot);
     }
-    return;
 }
 
 void Card::printInfo() const{
