@@ -101,7 +101,7 @@ int Player::getAttackStrength(){
 }
 
 void Player::printInfo(){
-    std::cout << "Player Details: " << "\n";
+    std::cout << "Player Details:" << "\n";
     std::cout << "Name: " << m_name << "\n";
     std::cout << "Level: " << m_level << "\n";
     std::cout << "Force: " << m_force << "\n";
