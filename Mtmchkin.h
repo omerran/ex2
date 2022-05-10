@@ -24,9 +24,11 @@ public:
 
     void playNextCard();
 
-    bool isOver();
+    bool isOver() const;
 
     GameStatus getGameStatus() const;
+
+    ~Mtmchkin();
 
 
 private:

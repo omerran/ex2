@@ -38,7 +38,7 @@ int Player::getLevel() const{
 }
 
 void Player::buff(int force){
-    if(force < 0){
+    if(force <= 0){
         force = 0;
     }
 
@@ -46,11 +46,12 @@ void Player::buff(int force){
 }
 
 void Player::heal(int HP){
-    if(HP < 0){
+    if(HP <= 0){
         HP = 0;
     }
 
-    if(m_HP + HP > m_maxHP) {
+    if(m_HP + HP >= m_maxHP) {
+        m_HP=m_maxHP;
         return;
     }
     m_HP += HP;
@@ -84,7 +85,6 @@ void Player::addCoins(int coins){
     m_coins += coins;
 }
 
-// אם זה שלילי יש דפקה (כי מוציא TRUE) - לא ברור למה התכוונו
 bool Player::pay(int coins){
     if(coins < 0){
         coins = 0;
