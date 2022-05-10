@@ -12,7 +12,6 @@ Mtmchkin::Mtmchkin(const char *playerName, const Card *cardsArray, int numOfCard
         tempArray[i]=cardsArray[i];
     }
     this->m_cardsArray = tempArray;
-    this->m_cardsArray = new Card[numOfCards]();
     this->m_gameStatus = GameStatus::MidGame;
 }
 
@@ -34,9 +33,11 @@ void Mtmchkin::playNextCard(){
     m_ourPlayer.printInfo();
     if(this->m_ourPlayer.isKnockedOut()){
         this->m_gameStatus=GameStatus::Loss;
+        return;
     }
     if(this->m_ourPlayer.getLevel()==10){
         this->m_gameStatus=GameStatus::Win;
+        return;
     }
     if (this->m_cardsIndex < this->m_cardsNumber-1){
         this->m_cardsIndex++;
